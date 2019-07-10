@@ -7,7 +7,7 @@ use std::io::{self, Cursor, Seek, SeekFrom};
 use inferno::collapse::Collapse;
 use rocket::Data;
 
-#[post("/", data = "<data>")]
+#[post("/upload", data = "<data>")]
 fn upload(data: Data) -> io::Result<String> {
     let xd_opts = inferno::collapse::xdebug::Options;
     let mut fg_opts = inferno::flamegraph::Options::default();
@@ -35,5 +35,5 @@ fn upload(data: Data) -> io::Result<String> {
 
 fn main() {
     rocket::ignite()
-        .mount("/upload", routes![upload]).launch();
+        .mount("/", routes![upload]).launch();
 }
