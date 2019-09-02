@@ -9,7 +9,7 @@ use rocket::Data;
 
 #[post("/upload", data = "<data>")]
 fn upload(data: Data) -> io::Result<String> {
-    let xd_opts = inferno::collapse::xdebug::Options;
+    let xd_opts = inferno::collapse::xdebug::Options::default();
     let mut fg_opts = inferno::flamegraph::Options::default();
 
     let mut buff = Cursor::new(Vec::new());
