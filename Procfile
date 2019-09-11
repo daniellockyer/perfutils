@@ -1,1 +1,1 @@
-web: ./target/release/perfutils
+web: ROCKET_PORT=$PORT ROCKET_ENV=prod ./target/release/perfutils
