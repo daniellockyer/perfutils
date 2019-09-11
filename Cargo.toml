@@ -12,5 +12,5 @@ edition = "2018"
 
 [dependencies]
 inferno = { git="https://github.com/daniellockyer/inferno/", branch="collapse-xdebug" }
-rocket = "0.4.0"
-rocket_contrib = "0.4.0"
+rocket = "0.4.2"
+rocket_contrib = "0.4.2"
