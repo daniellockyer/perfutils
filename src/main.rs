@@ -25,11 +25,7 @@ fn upload(data: rocket::Data) -> std::io::Result<String> {
 
     let inner = buff3.into_inner();
 
-    if let Ok(u) = std::str::from_utf8(&inner) {
-        Ok(u.to_owned())
-    } else {
-        Ok("error".to_owned())
-    }
+    Ok(std::str::from_utf8(&inner).unwrap_or_else(|_| "error").to_owned())
 }
 
 fn main() {
